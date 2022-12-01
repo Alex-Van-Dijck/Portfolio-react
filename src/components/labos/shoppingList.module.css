@@ -1,0 +1,22 @@
+.shoppingAddForm{
+    display:grid;
+    grid-template-columns: 100px 1fr;
+}
+
+.error{
+    background-color: red;
+    border:1px solid darkred;
+    color:rgb(102, 0, 0);
+    padding:10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.success{
+    background-color: green;
+    border:1px solid darkgreen;
+    color:rgb(0, 65, 0);
+    padding:10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
