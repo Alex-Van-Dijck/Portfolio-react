@@ -4,6 +4,8 @@ import CardPage from './components/Pages/ComponentPage/CardPage';
 import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from './components/Pages/Home/Home';
 import ContactPage from './components/Pages/Contact/Contact';
+import ShoppingList from './components/labos/ShoppingList/ShoppingList';
+import TodoApp from './components/labos/Todo/TodoApp';
 
 const Root = () => {
   return (
@@ -31,7 +33,15 @@ function App() {
                 element: <CardPage/>
             },
             {
-              path:"contact",
+                path:"Portfolio/Shoppinglist",
+                element: <ShoppingList/>
+            },
+            {
+              path:"Portfolio/Todo",
+              element: <TodoApp/>
+            },
+            {
+              path:"Contact",
               element: <ContactPage/>
             }
         ]

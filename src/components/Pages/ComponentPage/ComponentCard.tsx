@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { Button, CardActionArea, CardActions } from '@mui/material';
 import styles from "./ComponentCard.module.css";
+import { useNavigate } from 'react-router-dom';
 
 
 export interface ICardProps{
@@ -14,6 +15,8 @@ export interface ICardProps{
 }
 
 const ComponentCard = ({imgPath,title,description}:ICardProps)=> {
+
+  const nav = useNavigate();
 
 return(
     <div>
@@ -34,7 +37,7 @@ return(
       </CardContent>
     </CardActionArea>
     <CardActions className={styles.Center}>
-      <Button size="small" color="primary" variant="outlined" >
+      <Button size="small" color="primary" variant="outlined" onClick={()=>{nav("/Portfolio/" + title)}} >
         Open
       </Button>
     </CardActions>
