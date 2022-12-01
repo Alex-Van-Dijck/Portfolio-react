@@ -12,9 +12,9 @@ const Menu = ()=> {
 
   return (
     <div className={styles.container}>
-      <Button variant="text" onClick={()=>{nav("/"); setActiveRoute(0);}} className={(activeRoute === 0)? styles.BtnSelected : styles.BtnDefault} >Home</Button>
-      <Button variant="text" onClick={()=>{nav("/Portfolio"); setActiveRoute(1);}} className={(activeRoute === 1)? styles.BtnSelected : styles.BtnDefault} >Portfolio</Button>
-      <Button variant="text" onClick={()=>{nav("/Contact"); setActiveRoute(2);}} className={(activeRoute === 2)? styles.BtnSelected : styles.BtnDefault}>Contact</Button>
+      <Button variant="text" onClick={()=>{nav("/"); setActiveRoute(0);}} sx={(activeRoute === 0)? {color:'#03a9f4'} : {color:'white'} }>Home</Button>
+      <Button variant="text" onClick={()=>{nav("/Portfolio"); setActiveRoute(1);}} sx={(activeRoute === 1)? {color:'#03a9f4'} : {color:'white'} } >Portfolio</Button>
+      <Button variant="text" onClick={()=>{nav("/Contact"); setActiveRoute(2);}} sx={(activeRoute === 2)? {color:'#03a9f4'} : {color:'white'} }>Contact</Button>
     </div>
   );
 }
