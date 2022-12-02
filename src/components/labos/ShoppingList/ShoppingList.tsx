@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "./shoppingList.module.css";
+import {Button,TextField} from '@mui/material';
 
 interface shoppingListItem{
     name:string,
@@ -42,7 +43,7 @@ const ShoppingList = () =>{
     }
 
     return(
-        <div>
+        <div className={styles.container}>
             {successMessage && <div className={styles.success}>
                 {successMessage}    
             </div> }
@@ -53,12 +54,10 @@ const ShoppingList = () =>{
 
 
             <div className={styles.shoppingAddForm}>
-                <label>Name:</label>
-                <input type={"text"} placeholder="Name" value={name} onChange={(event)=>{setName(event.target.value)}}/>
-                <label>Quantity: </label>
-                <input type={"number"} placeholder="Quantity" value={quantity} onChange={(event)=>{setQuantity(parseInt(event.target.value))}}/>
+                <TextField label="Name" placeholder="Name" value={name} onChange={(event)=>{setName(event.target.value)}}/>
+                <TextField type="number" label="Quantity" placeholder="Quantity" value={quantity} onChange={(event)=>{setQuantity(parseInt(event.target.value))}}/>
             </div>
-            <button onClick={handleAdd}>Add</button>
+            <Button variant="contained" size='small' onClick={handleAdd}>Add</Button>
 
             <table>
                 <thead>
@@ -79,7 +78,7 @@ const ShoppingList = () =>{
                                     {item.quantity}
                                 </td>
                                 <td>
-                                    <button onClick={()=>{removeItem(index)}}>Remove</button>
+                                    <Button variant="contained" size='small' onClick={()=>{removeItem(index)}}>Remove</Button>
                                 </td>
                             </tr>
                         ))

@@ -1,6 +1,7 @@
 .shoppingAddForm{
-    display:grid;
-    grid-template-columns: 100px 1fr;
+    display:flex;
+    flex-direction: column;
+    gap:1rem;
 }
 
 .error{
@@ -19,4 +20,8 @@
     padding:10px;
     margin-bottom: 10px;
     border-radius: 4px;
+}
+
+.container{
+    margin:2rem;
 }

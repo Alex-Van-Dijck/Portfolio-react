@@ -10,7 +10,10 @@ const CardPage = ()=>{
         imgPath:"/Pages/Portfolio/shopping.png",},
         {title:"Todo",
         description:"This app contains a list of tasks that you can add and delete. The app also includes an input field where you can add a new task.",
-        imgPath:"/Pages/Portfolio/Todo.png"}
+        imgPath:"/Pages/Portfolio/Todo.png"},
+        {title:"Pokemon",
+        description:"This app makes an api call to https://pokeapi.co/, displays a chosen number of pokemon and has a searchfield.",
+        imgPath:"/logo192.png"}
     ]
 
     //testCode

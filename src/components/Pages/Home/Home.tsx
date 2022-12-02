@@ -6,7 +6,7 @@ const Home = () =>{
         <div>
             <Grid container spacing={2}>
                 <Grid item xs={4}>
-                    <img src="/Pages/Home/kop_kleiner.jpg" style={{width:'40%'}}/>
+                    <img src="/Pages/Home/kop_kleiner.png" style={{width:'40%'}}/>
                 </Grid>
             <Grid item xs={8}>
             </Grid>

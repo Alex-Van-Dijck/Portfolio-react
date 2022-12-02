@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
+import styles from "./Todo.module.css";
 
 export interface TodoItem { 
     name: string;
@@ -21,7 +22,7 @@ const TodoApp = () => {
     };
 
     return (
-        <div>
+        <div className={styles.AppContainer}>
             <TodoInput setTodo={setTodo} addTodo={addTodo} todo={todo}/>
             <TodoList todos={todos} markCompleted={markCompleted}/>
         </div>
