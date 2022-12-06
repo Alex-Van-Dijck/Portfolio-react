@@ -13,7 +13,7 @@ const CardPage = ()=>{
         imgPath:"/Pages/Portfolio/Todo.png"},
         {title:"Pokemon",
         description:"This app makes an api call to https://pokeapi.co/, displays a chosen number of pokemon and has a searchfield.",
-        imgPath:"/logo192.png"}
+        imgPath:"/Pages/Portfolio/Poke5.png"}
     ]
 
     //testCode

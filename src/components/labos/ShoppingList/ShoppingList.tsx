@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styles from "./shoppingList.module.css";
-import {Button,TextField} from '@mui/material';
+import {Alert, Button,TextField} from '@mui/material';
 
 interface shoppingListItem{
     name:string,
@@ -44,14 +44,12 @@ const ShoppingList = () =>{
 
     return(
         <div className={styles.container}>
-            {successMessage && <div className={styles.success}>
+            {successMessage && <Alert severity="success" className={styles.message}>
                 {successMessage}    
-            </div> }
-            {errorMessage && <div className={styles.error}>
+            </Alert> }
+            {errorMessage &&<Alert severity="error" className={styles.message}>
                 {errorMessage}
-            </div>}
-            
-
+            </Alert>}
 
             <div className={styles.shoppingAddForm}>
                 <TextField label="Name" placeholder="Name" value={name} onChange={(event)=>{setName(event.target.value)}}/>

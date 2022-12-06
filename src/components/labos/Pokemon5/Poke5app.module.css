@@ -1,0 +1,10 @@
+.container{
+    margin:2rem;
+  
+}
+
+.form{
+    display:flex;
+    flex-direction: row;
+    gap:1rem;
+}

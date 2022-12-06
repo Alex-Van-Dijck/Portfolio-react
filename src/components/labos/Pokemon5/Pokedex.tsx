@@ -1,5 +1,7 @@
+import { List, ListItem, ListItemIcon, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
+import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
 
 interface PokedexResponse{
     results: Pokemon[];
@@ -36,8 +38,10 @@ const Pokedex = ({limit = 151}:IPokedexProps)=>{
 
     return(
         
-        <div>
-            {loading&& <ColorRing
+        <div style={{marginTop:'1rem'}} >
+            
+        <TextField variant='outlined' type="text" onChange={(event)=> setFilterText(event.target.value)} value={filterText}/>
+        {loading&& <ColorRing
         visible={true}
         height="80"
         width="80"
@@ -46,14 +50,13 @@ const Pokedex = ({limit = 151}:IPokedexProps)=>{
         wrapperClass="blocks-wrapper"
         colors={['#e15b64','#f47e60','#f8b26a','#abbd81','#849b87']}
         />}
-        <input type="text" onChange={(event)=> setFilterText(event.target.value)} value={filterText}/>
-            <ul>
+            <List>
             {
                 pokemon.filter((p)=>p.name.toUpperCase().startsWith(filterText.toUpperCase())).map((pokemon)=>{
-                    return <li>{pokemon.name}</li>
+                    return <ListItem><ListItemIcon><CatchingPokemonIcon fontSize="small"/></ListItemIcon>{pokemon.name}</ListItem>
                 })
             }
-            </ul>
+            </List>
             
         </div>
     )
