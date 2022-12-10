@@ -3,7 +3,6 @@ html, body {
   height: 100vh;
   background: mintcream;
   animation: fadeIn 500ms reverse;
-  overflow: hidden;
 }
 
 @keyframes fadeIn{
