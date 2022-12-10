@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
-
+import styles from './Contact.module.css';
 
 const ContactPage = () =>{
 

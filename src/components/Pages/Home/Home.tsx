@@ -1,16 +1,28 @@
 import React from "react";
 import { Grid } from '@mui/material';
+import styles from './Home.module.css';
 
 const Home = () =>{
+
     return(
-        <div style={{backgroundColor:'#50b9de', height:'100%'}}>
-            <Grid container spacing={2}>
-                <Grid item xs={4}>
-                    <img src="/Pages/Home/kop_kleiner.png" style={{width:'40%'}}/>
-                </Grid>
-            <Grid item xs={8}>
-            </Grid>
-        </Grid>
+        <div className={styles.container}>    
+                <p className={styles.introText}>
+                    <div className={styles.bigText}>
+                        Hi, I'm Alex.<br/><br/>
+
+                        A programming student<br/>
+                        <div style={{opacity:'80%'}}>
+                        based in Antwerp <br/>
+                        </div>
+                    </div>
+                    <div className={styles.smallText}>
+                    On this website, you'll find a selection of my most impressive React projects, complete with descriptions and demos. You'll also learn more about my background and experience with React, as well as my other skills and expertise.
+                    </div>
+                </p>
+                <img src="/Pages/Home/kop_kleiner.png" className={styles.pic}/>
+                <div className={styles.blob}/>
+                <div className={styles.blob2}/>
+                <div className={styles.blob3}/>
         </div>
     )
 }

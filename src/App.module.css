@@ -1,0 +1,14 @@
+html, body {
+  width: 100vw;
+  height: 100vh;
+  background: mintcream;
+  animation: fadeIn 500ms reverse;
+  overflow: hidden;
+}
+
+@keyframes fadeIn{
+  100%{
+    transform: scale(1.03);
+    opacity: 0;
+  }
+}

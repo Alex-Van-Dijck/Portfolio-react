@@ -1,4 +1,4 @@
-import './App.css';
+
 import Menu from './components/Menu'
 import CardPage from './components/Pages/ComponentPage/CardPage';
 import { Outlet, createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -8,6 +8,7 @@ import ShoppingList from './components/labos/ShoppingList/ShoppingList';
 import TodoApp from './components/labos/Todo/TodoApp';
 import Poke5App from './components/labos/Pokemon5/Poke5App';
 import TicTacToe from './components/labos/TicTacToe/TicTacToe';
+import styles from './App.module.css';
 
 const Root = () => {
   return (
@@ -55,8 +56,11 @@ function App() {
 ]);
 
   return (
-    <div >
+    <div className={styles.background}>
       <RouterProvider router={router} />
+      <div className={styles.blob}/>
+      <div className={styles.blob2}/> 
+      <div className={styles.blob3}/>
     </div>
   )
 }
