@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useEffect} from "react";
 import ComponentCard, { ICardProps } from "./ComponentCard";
 import styles from './CardPage.module.css';
 
 const CardPage = ()=>{
+
+    useEffect(() => {
+        document.title = 'Portfolio';
+      }, []);
 
     const Cardlist:ICardProps[] = [
         {title:"Shoppinglist",

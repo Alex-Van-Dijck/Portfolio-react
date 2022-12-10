@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import logo from './logo.svg';
 import Pokedex from './Pokedex'
 import { Button, TextField } from '@mui/material';
 import styles from './Poke5app.module.css';
 
 function Poke5App() {
+
+  useEffect(() => {
+    document.title = 'Pokemon';
+  }, []);
+
 
   const [limit,setLimit] = useState(0);
   const [activeLimit,setActiveLimit] = useState(10);

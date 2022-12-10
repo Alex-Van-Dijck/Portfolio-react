@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import styles from "./shoppingList.module.css";
 import {Alert, Button,TextField} from '@mui/material';
 
@@ -8,6 +8,11 @@ interface shoppingListItem{
 }
 
 const ShoppingList = () =>{
+
+    useEffect(() => {
+        document.title = 'Shoppinglist';
+      }, []);
+    
 
     const [shoppingList,setShoppingList] = useState<shoppingListItem[]>([{name:"Aardappelen",quantity:5}]);
     const [name,setName] = useState<string>("");

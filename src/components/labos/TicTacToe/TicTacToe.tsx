@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import styles from './TicTacToe.module.css';
 import { Alert,AlertTitle } from '@mui/material';
 
 const TicTacToe = () => {
   const [board, setBoard] = useState(['','','','','','','','','']);
   const [player, setPlayer] = useState('X');
+
+  useEffect(() => {
+    document.title = "TicTacToe";
+  }, []);
+
 
   const play = (index: number) => {
     if (board[index] === '') {

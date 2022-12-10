@@ -1,4 +1,4 @@
-import React from "react";import Avatar from '@mui/material/Avatar';
+import React,{useEffect} from "react";import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import CssBaseline from '@mui/material/CssBaseline';
 import TextField from '@mui/material/TextField';
@@ -14,6 +14,10 @@ import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact
 import styles from './Contact.module.css';
 
 const ContactPage = () =>{
+
+  useEffect(() => {
+    document.title = 'Contact';
+  }, []);
 
 
   const theme = createTheme(undefined);

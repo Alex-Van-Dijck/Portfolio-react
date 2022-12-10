@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 import styles from "./Todo.module.css";
@@ -9,6 +9,11 @@ export interface TodoItem {
 }
 
 const TodoApp = () => {
+
+    useEffect(() => {
+        document.title = 'Todo';
+      }, []);
+    
     const [todos, setTodos] = useState<TodoItem[]>([]);
     const [todo, setTodo] = useState("");
 
