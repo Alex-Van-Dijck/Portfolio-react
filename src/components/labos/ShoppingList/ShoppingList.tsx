@@ -21,7 +21,7 @@ const ShoppingList = () =>{
     const [errorMessage,setErrorMessage] = useState("");
 
     const handleAdd = ()=>{
-        if(quantity==0){
+        if(quantity===0){
             setErrorMessage("Quantity should be above 0");
             setSuccessMessage("");
         }else{

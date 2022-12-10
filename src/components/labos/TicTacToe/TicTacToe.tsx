@@ -32,7 +32,7 @@ const TicTacToe = () => {
     ];
 
     for (let positions of winPositions) {
-      if (board[positions[0]] == board[positions[1]] && board[positions[1]] == board[positions[2]]) {
+      if (board[positions[0]] === board[positions[1]] && board[positions[1]] === board[positions[2]]) {
         return board[positions[0]]
       }
     }
