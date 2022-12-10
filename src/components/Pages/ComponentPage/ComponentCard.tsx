@@ -20,7 +20,7 @@ const ComponentCard = ({imgPath,title,description}:ICardProps)=> {
 
 return(
     <div>
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 345 }} style={{width:'22rem'}}>
     <CardActionArea>
       <CardMedia
         component="img"
@@ -31,7 +31,7 @@ return(
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" style={{height:'5rem'}}>
             {description}
         </Typography>
       </CardContent>
