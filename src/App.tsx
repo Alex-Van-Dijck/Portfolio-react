@@ -10,9 +10,7 @@ import Poke5App from './components/labos/Pokemon5/Poke5App';
 import TicTacToe from './components/labos/TicTacToe/TicTacToe';
 import styles from './App.module.css';
 import { ThemeProvider } from '@mui/material';
-import defaultTheme from './Styling/Theme';
-
-
+import { lightTheme } from './Styling/Theme';
 
 const Root = () => {
   return (
@@ -24,6 +22,8 @@ const Root = () => {
 }
 
 function App() {
+
+  const theme = lightTheme;
 
   const router = createBrowserRouter([
     {
@@ -59,12 +59,12 @@ function App() {
 ]);
 
   return (
-     <div className={styles.background}>
+    <ThemeProvider theme={theme}>
+      <div className={styles.background}>
         <RouterProvider router={router} />
-        <div className={styles.blob}/>
-        <div className={styles.blob2}/> 
-        <div className={styles.blob3}/>
-      </div>   
+      </div>  
+    </ThemeProvider>
+      
   )
 }
 

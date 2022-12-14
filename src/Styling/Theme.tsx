@@ -4,74 +4,51 @@ import { PaletteMode } from '@mui/material';
 import { light, dark } from '@mui/material/styles/createPalette';
 
 
-const defaultThemeOld = (mode: PaletteMode) => ({
+export const darkTheme = createTheme({
+  typography:{
+    fontFamily:['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', '"Open Sans"', '"Helvetica Neue"', 'sans-serif'].join(''),
+  },
   palette: {
-    mode,
-    ...(mode === 'light'
-      ? {
-          // palette values for light mode
-          primary: indigo,
-          divider: indigo[200],
-          secondary: teal,
-          background:{
-            default: indigo[500],
-            paper: indigo[500],
-          },
-          text: {
-            primary: grey[900],
-            secondary: grey[800],
-          },
-        }
-      : {
-          // palette values for dark mode
-          primary: '#121212',
-          divider: '#121858',
-          background: {
-            default: '#121212',
-            paper: '#121212',
-          },
-          text: {
-            primary: '#fff',
-            secondary: grey[500],
-          },
-        }),
+    primary: {
+      main: indigo[500],
+      light: '#6573c3',
+      dark: '#2c387e'
+    },
+    secondary: {
+      main: '#1de9b6',
+      light:"#4aedc4",
+      dark: '#14a37f'
+    },
+    background:{
+        default:'#121212',
+        paper: '#121212'
+    },
+    divider:'rgba(255, 255, 255, 0.12)',
+    text:{
+      primary:'#fff',
+      secondary:'rgba(255, 255, 255, 0.7)',
+      disabled: 'rgba(255, 255, 255, 0.5)'
+    },
+    mode:'dark'
   },
 });
 
-const defaultTheme = (mode: PaletteMode) => ({
+export const lightTheme =createTheme({
   typography:{
       fontFamily:['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', '"Open Sans"', '"Helvetica Neue"', 'sans-serif'].join(''),
   },
   palette: {
-    mode,
-    ...(mode === 'light'
-      ? {
-          // palette values for light mode
-          primary: indigo,
-          secondary:teal,
-          divider: indigo[200],
-          text: {
-            primary: indigo[900],
-            secondary: teal[800],
-          },
-        }
-      : {
-          // palette values for dark mode
-          primary: deepPurple,
-          divider: teal[900],
-          background: {
-            default: '#121212',
-            paper:  '#121212',
-          },
-          text: { 
-          primary: '#fff',
-          secondary: grey[500],
-        },
-      }),
+    primary: indigo,
+    secondary: teal,
+    background: {
+      default: '#f5fffa'
+    },
+    divider: indigo[200],
+    text: {
+      primary: grey[900],
+      secondary: grey[800],
+    },
+    mode: 'light',
 },
 });
 
-
-     
-
-export default defaultTheme;

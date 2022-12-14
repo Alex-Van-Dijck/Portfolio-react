@@ -1,14 +1,12 @@
 import React,{useEffect,useMemo} from "react";
-import { Grid, Typography, createTheme } from '@mui/material';
+import { Grid, Typography, createTheme, useTheme } from '@mui/material';
 import styles from './Home.module.css';
-import { ColorModeContext } from "../../ToggleColorMode";
-import defaultTheme from "../../../Styling/Theme";
+import { lightTheme } from "../../../Styling/Theme";
 
 
 const Home = () =>{
 
-    const colorMode = React.useContext(ColorModeContext);
-
+    const theme = useTheme();
 
     useEffect(() => {
         document.title = 'Home';
@@ -16,7 +14,7 @@ const Home = () =>{
 
     return(
         <div className={styles.container}>  
-                <Typography  sx={{margin:'3rem',zIndex:1,gridColumn:1,color:''}}>
+                <Typography  sx={{margin:'3rem',zIndex:1,gridColumn:1,color:theme.palette.text.primary}}>
                     <Typography variant='h1'>
                         Hi, I'm Alex.<br/><br/>
 
