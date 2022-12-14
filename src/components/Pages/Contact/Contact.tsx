@@ -9,10 +9,12 @@ import Grid from '@mui/material/Grid';
 import {Box,Alert} from '@mui/material';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
 import styles from './Contact.module.css';
 import emailjs, { sendForm } from '@emailjs/browser';
+import { useTheme } from "@mui/material";
+
+
 const ContactPage = () =>{
 
 
@@ -30,7 +32,7 @@ const ContactPage = () =>{
   const [isSent,setIsSent] = useState<number>(0);
 
 
-  const theme = createTheme(undefined);
+  const theme = useTheme();
 
 
       const send = async(e:any) => {
@@ -52,7 +54,6 @@ const ContactPage = () =>{
       }
 
     return(
-      <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs" >
         
         <CssBaseline />
@@ -66,8 +67,8 @@ const ContactPage = () =>{
           }}
         >
           {isSent==1?<Alert severity="error">Something went wrong, your email was not sent!</Alert>  : isSent==2?<Alert severity="success">Your email was succesfully sent!</Alert>:<></> }
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-            <ConnectWithoutContactIcon />
+          <Avatar sx={{ m: 1, backgroundColor:theme.palette.secondary.main}} >
+            <ConnectWithoutContactIcon  />
           </Avatar>
           <Typography component="h1" variant="h5">
             Contact
@@ -141,7 +142,6 @@ const ContactPage = () =>{
         </Box>
 
       </Container>
-    </ThemeProvider>
     ) 
 }
 

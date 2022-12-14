@@ -1,7 +1,7 @@
-import React,{useEffect,useMemo} from "react";
-import { Grid, Typography, createTheme, useTheme } from '@mui/material';
+import React,{useEffect} from "react";
+import { Typography,  useTheme,Avatar } from '@mui/material';
 import styles from './Home.module.css';
-import { lightTheme } from "../../../Styling/Theme";
+
 
 
 const Home = () =>{
@@ -27,10 +27,12 @@ const Home = () =>{
                     On this website, you'll find a selection of my most impressive React projects, complete with descriptions and demos.<br/> You'll also learn more about other skills and expertise.
                     </Typography>
                 </Typography>
-                <img src="/Pages/Home/kop_kleiner.png" className={styles.pic}/>
-                <div className={styles.blob}/>
-                <div className={styles.blob2}/>
-                <div className={styles.blob3}/>
+                <div style={{marginTop:'3rem',marginRight:'3rem',zIndex:2,gridColumn:2}}>
+                    <img src="/Pages/Home/beeldinhoud.png" style={{width:'100%'}}/>
+                </div>
+                <div className={styles.blob} style={{backgroundColor:theme.palette.secondary.light}}/>
+                <div className={styles.blob2} style={{backgroundColor:theme.palette.secondary.light}}/>
+                <div className={styles.blob3} style={{backgroundColor:theme.palette.secondary.light}}/>
         </div>
         
     )

@@ -1,7 +1,6 @@
 import { createTheme } from '@mui/material/styles';
-import { indigo,teal,grey, deepPurple} from '@mui/material/colors';
-import { PaletteMode } from '@mui/material';
-import { light, dark } from '@mui/material/styles/createPalette';
+import { indigo,grey} from '@mui/material/colors';
+
 
 
 export const darkTheme = createTheme({
@@ -38,8 +37,16 @@ export const lightTheme =createTheme({
       fontFamily:['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', '"Open Sans"', '"Helvetica Neue"', 'sans-serif'].join(''),
   },
   palette: {
-    primary: indigo,
-    secondary: teal,
+    primary: {
+      main:'#264653',
+      dark:'#15313c',
+      light:'#4d7c8f'
+    },
+    secondary:{
+      main:"#2a9d8f",
+      light:'#5abbb2',
+      dark:'#237f72'
+    },
     background: {
       default: '#f5fffa'
     },
