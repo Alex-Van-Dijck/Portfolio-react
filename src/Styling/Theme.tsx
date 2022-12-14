@@ -13,6 +13,10 @@ const defaultThemeOld = (mode: PaletteMode) => ({
           primary: indigo,
           divider: indigo[200],
           secondary: teal,
+          background:{
+            default: indigo[500],
+            paper: indigo[500],
+          },
           text: {
             primary: grey[900],
             secondary: grey[800],
@@ -35,6 +39,9 @@ const defaultThemeOld = (mode: PaletteMode) => ({
 });
 
 const defaultTheme = (mode: PaletteMode) => ({
+  typography:{
+      fontFamily:['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', '"Open Sans"', '"Helvetica Neue"', 'sans-serif'].join(''),
+  },
   palette: {
     mode,
     ...(mode === 'light'
@@ -44,8 +51,8 @@ const defaultTheme = (mode: PaletteMode) => ({
           secondary:teal,
           divider: indigo[200],
           text: {
-            primary: grey[900],
-            secondary: grey[800],
+            primary: indigo[900],
+            secondary: teal[800],
           },
         }
       : {

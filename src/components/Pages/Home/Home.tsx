@@ -1,9 +1,14 @@
-import React,{useEffect} from "react";
-import { Grid } from '@mui/material';
+import React,{useEffect,useMemo} from "react";
+import { Grid, Typography, createTheme } from '@mui/material';
 import styles from './Home.module.css';
+import { ColorModeContext } from "../../ToggleColorMode";
+import defaultTheme from "../../../Styling/Theme";
 
 
 const Home = () =>{
+
+    const colorMode = React.useContext(ColorModeContext);
+
 
     useEffect(() => {
         document.title = 'Home';
@@ -11,19 +16,19 @@ const Home = () =>{
 
     return(
         <div className={styles.container}>  
-                <p className={styles.introText}>
-                    <div className={styles.bigText}>
+                <Typography  sx={{margin:'3rem',zIndex:1,gridColumn:1,color:''}}>
+                    <Typography variant='h1'>
                         Hi, I'm Alex.<br/><br/>
 
                         A programming student<br/>
-                        <div style={{opacity:'80%'}}>
+                        <div style={{opacity:0.8}}>
                         based in Antwerp <br/>
                         </div>
-                    </div>
-                    <div className={styles.smallText}>
+                    </Typography>
+                    <Typography variant="subtitle1">
                     On this website, you'll find a selection of my most impressive React projects, complete with descriptions and demos.<br/> You'll also learn more about other skills and expertise.
-                    </div>
-                </p>
+                    </Typography>
+                </Typography>
                 <img src="/Pages/Home/kop_kleiner.png" className={styles.pic}/>
                 <div className={styles.blob}/>
                 <div className={styles.blob2}/>
