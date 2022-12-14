@@ -1,8 +1,11 @@
-import React,{useEffect} from "react";
+import React,{useEffect, useState} from "react";
 import ComponentCard, { ICardProps } from "./ComponentCard";
 import styles from './CardPage.module.css';
+import { TextField } from "@mui/material";
 
 const CardPage = ()=>{
+
+    const [filterText,setFilterText] = useState<string>("");
 
     useEffect(() => {
         document.title = 'Portfolio';
@@ -24,11 +27,16 @@ const CardPage = ()=>{
     ]
 
     return(
-        <div className={styles.container}>
-            {Cardlist.map((card:ICardProps)=> 
-                <ComponentCard title={card.title} description={card.description} imgPath={card.imgPath} />
-            )}
+        <div className={styles.rootContainer}>
 
+            <TextField label="Search" variant='outlined' margin="normal" type="search" onChange={(event)=> setFilterText(event.target.value)} value={filterText}/>
+            <div className={styles.container}>
+                
+                {Cardlist.filter((c)=>c.title.toUpperCase().startsWith(filterText.toUpperCase())).map((card:ICardProps)=> 
+                    <ComponentCard title={card.title} description={card.description} imgPath={card.imgPath} />
+                )}
+
+            </div>
         </div>
     )
 }

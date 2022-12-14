@@ -40,7 +40,7 @@ const Pokedex = ({limit = 151}:IPokedexProps)=>{
         
         <div style={{marginTop:'1rem'}} >
             
-        <TextField variant='outlined' type="text" onChange={(event)=> setFilterText(event.target.value)} value={filterText}/>
+        <TextField variant='outlined' margin="normal" type="text" onChange={(event)=> setFilterText(event.target.value)} value={filterText}/>
         {loading&& <ColorRing
         visible={true}
         height="80"

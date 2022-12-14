@@ -18,7 +18,7 @@ function Poke5App() {
     <div className={styles.container}>
       <Pokedex limit={activeLimit}/>
         <div className={styles.form}>
-          <TextField variant="outlined" type="number" label="Limit" onChange={(e)=>{setLimit(Number(e.target.value))}} value={limit}/>
+          <TextField variant="outlined" margin='normal' type="number" label="Limit" onChange={(e)=>{setLimit(Number(e.target.value))}} value={limit}/>
           <Button variant="outlined" onClick={()=>{setActiveLimit(limit)}}>Set Limit</Button>
         </div>
       
