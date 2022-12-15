@@ -9,23 +9,19 @@ import TodoApp from './components/labos/Todo/TodoApp';
 import Poke5App from './components/labos/Pokemon5/Poke5App';
 import TicTacToe from './components/labos/TicTacToe/TicTacToe';
 import styles from './App.module.css';
-import { ThemeProvider } from '@mui/material';
+import { IconButton,  ThemeProvider } from '@mui/material';
 import { darkTheme, lightTheme } from './Styling/Theme';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
+import { useTheme } from '@emotion/react';
 
-interface IRootProps{
-  dark: boolean;
-  setDark: (value:boolean)=>void;
-}
 
-const Root = ({dark,setDark}:IRootProps) => {
 
-  useEffect(()=>{
-    console.log('Root toggled!');
-  },[setDark])
+const Root = () => {
 
   return (
       <div>
-        <Menu dark={dark} setDark={setDark}/>
+        <Menu />
         <Outlet/>
       </div>
   );
@@ -35,21 +31,10 @@ function App() {
 
   const [theme,setTheme] = useState(lightTheme);
 
-  const [dark,setDark] = useState<boolean>(false);
-
-  useEffect(() => {
-    console.log('darkmode: ' + dark );
-    if(dark){
-      setTheme(darkTheme);
-    }else{
-      setTheme(lightTheme);
-    }
-  },[setDark]);
-
   const router = createBrowserRouter([
     {
         path: "/",
-        element: <Root dark={dark} setDark={setDark}/>,
+        element: <Root/>,
         children: [
             {
                 path: "",
@@ -79,9 +64,18 @@ function App() {
     }
 ]);
 
+const toggleDark = ()=>{
+  setTheme(theme === lightTheme? darkTheme : lightTheme)
+}
+
+  document.body.style.backgroundColor = theme.palette.background.default;
+
   return (
     <ThemeProvider theme={theme}>
-      <div className={styles.background}>
+      <div>
+          <IconButton sx={{ ml: 1,position:'absolute',right:'1rem',top:'1rem' }} onClick={toggleDark} color='secondary'>
+            {theme === darkTheme ? <Brightness4Icon /> : <Brightness7Icon />}
+          </IconButton>
         <RouterProvider router={router} />
       </div>  
     </ThemeProvider>

@@ -1,7 +1,5 @@
 html, body {
-  width: 100vw;
-  height: 100vh;
-  background: #f5fffa;
+  min-height:100%;
   animation: fadeIn 500ms reverse;
 }
 

@@ -1,9 +1,8 @@
 import { createTheme } from '@mui/material/styles';
 import { indigo,grey} from '@mui/material/colors';
+import { Theme } from '@mui/material/styles';
 
-
-
-export const darkTheme = createTheme({
+export const darkTheme:Theme = createTheme({
   typography:{
     fontFamily:['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', '"Open Sans"', '"Helvetica Neue"', 'sans-serif'].join(''),
   },
