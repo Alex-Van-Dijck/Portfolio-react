@@ -2,6 +2,7 @@ import React, {useState,useEffect} from "react";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 import styles from "./Todo.module.css";
+import Container from "@mui/material/Container";
 
 export interface TodoItem { 
     name: string;
@@ -27,10 +28,10 @@ const TodoApp = () => {
     };
 
     return (
-        <div className={styles.AppContainer}>
+        <Container sx={{m:2}}>
             <TodoInput setTodo={setTodo} addTodo={addTodo} todo={todo}/>
             <TodoList todos={todos} markCompleted={markCompleted}/>
-        </div>
+        </Container>
     );
 
 }
