@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import styles from "./shoppingList.module.css";
-import {Alert, Button,TextField,Table,TableHead,TableBody,TableCell,TableRow, TableContainer,Paper} from '@mui/material';
+import {Alert, Button,TextField,Table,TableHead,TableBody,TableCell,TableRow, TableContainer,Paper, Container} from '@mui/material';
 
 interface shoppingListItem{
     name:string,
@@ -48,15 +48,15 @@ const ShoppingList = () =>{
     }
 
     return(
-        <div className={styles.container}>
-            {successMessage && <Alert severity="success" className={styles.message}>
+        <Container sx={{m:2}}>
+            {successMessage && <Alert severity="success" sx={{m:1}}>
                 {successMessage}    
             </Alert> }
-            {errorMessage &&<Alert severity="error" className={styles.message}>
+            {errorMessage &&<Alert severity="error" sx={{m:1}}>
                 {errorMessage}
             </Alert>}
 
-            <div className={styles.shoppingAddForm}>
+            <div style={{display:'flex', flexDirection: 'column',gap:'1rem'}}>
                 <TextField label="Name" placeholder="Name" value={name} onChange={(event)=>{setName(event.target.value)}}/>
                 <TextField type="number" label="Quantity" placeholder="Quantity" value={quantity} onChange={(event)=>{setQuantity(parseInt(event.target.value))}}/>
             </div>
@@ -90,7 +90,7 @@ const ShoppingList = () =>{
                 </tbody>
             </Table>
             </TableContainer>
-        </div>
+        </Container>
     )
 }
 
