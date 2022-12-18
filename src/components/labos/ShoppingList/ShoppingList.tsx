@@ -1,6 +1,6 @@
 import React, { useState,useEffect } from "react";
 import styles from "./shoppingList.module.css";
-import {Alert, Button,TextField} from '@mui/material';
+import {Alert, Button,TextField,Table,TableHead,TableBody,TableCell,TableRow, TableContainer,Paper} from '@mui/material';
 
 interface shoppingListItem{
     name:string,
@@ -60,34 +60,36 @@ const ShoppingList = () =>{
                 <TextField label="Name" placeholder="Name" value={name} onChange={(event)=>{setName(event.target.value)}}/>
                 <TextField type="number" label="Quantity" placeholder="Quantity" value={quantity} onChange={(event)=>{setQuantity(parseInt(event.target.value))}}/>
             </div>
-            <Button variant="contained" size='small' onClick={handleAdd}>Add</Button>
+            <Button variant="contained" size='small' onClick={handleAdd} sx={{m:2}}>Add</Button>
 
-            <table>
-                <thead>
-                    <tr>
+            <TableContainer component={Paper}>
+            <Table>
+                <TableHead>
+                    <TableRow>
                         <th>Name</th>
                         <th>Quantity</th>
                         <th></th>
-                    </tr>
-                </thead>
+                    </TableRow>
+                </TableHead>
                 <tbody>
                     {
                         shoppingList.map((item,index)=>(
-                            <tr>
-                                <td>
+                            <TableRow>
+                                <TableCell>
                                     {item.name}
-                                </td>
-                                <td>
+                                </TableCell>
+                                <TableCell>
                                     {item.quantity}
-                                </td>
-                                <td>
+                                </TableCell>
+                                <TableCell>
                                     <Button variant="contained" size='small' onClick={()=>{removeItem(index)}}>Remove</Button>
-                                </td>
-                            </tr>
+                                </TableCell>
+                            </TableRow>
                         ))
                     }
                 </tbody>
-            </table>
+            </Table>
+            </TableContainer>
         </div>
     )
 }
