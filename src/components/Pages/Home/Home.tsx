@@ -1,8 +1,7 @@
 import React,{useEffect} from "react";
 import { Typography,  useTheme,Avatar,Grid } from '@mui/material';
 import styles from './Home.module.css';
-
-
+import head from '../../../Assets/Home/beeldinhoud.png';
 
 const Home = () =>{
 
@@ -30,7 +29,7 @@ const Home = () =>{
                 </Typography>
                 </Grid>
                 <Grid item xs={3} style={{marginTop:'3rem',marginRight:'3rem',zIndex:2}}>
-                    <img src="/Pages/Home/beeldinhoud.png" style={{width:'100%'}}/>
+                    <img src={head} style={{width:'100%'}}/>
                 </Grid>
                 <div className={styles.blob} style={{backgroundColor:theme.palette.secondary.light}}/>
                 <div className={styles.blob2} style={{backgroundColor:theme.palette.secondary.light}}/>

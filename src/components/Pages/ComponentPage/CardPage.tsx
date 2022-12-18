@@ -2,6 +2,11 @@ import React,{useEffect, useState} from "react";
 import ComponentCard, { ICardProps } from "./ComponentCard";
 import styles from './CardPage.module.css';
 import { TextField } from "@mui/material";
+import poke5 from '../../../Assets/Portfolio/Poke5.png';
+import shopping from '../../../Assets/Portfolio/shopping.png';
+import TicTacToe from '../../../Assets/Portfolio/TicTacToe.png';
+import Todo from '../../../Assets/Portfolio/Todo.png';
+import slots from '../../../Assets/Slots/cherry.png';
 
 const CardPage = ()=>{
 
@@ -14,16 +19,19 @@ const CardPage = ()=>{
     const Cardlist:ICardProps[] = [
         {title:"Shoppinglist",
         description:"This app lets you add & remove items from a shoppinglist",
-        imgPath:"/Pages/Portfolio/shopping.png"},
+        imgPath:shopping},
         {title:"Todo",
         description:"This app contains a list of tasks that you can add and delete. The app also includes an input field where you can add a new task.",
-        imgPath:"/Pages/Portfolio/Todo.png"},
+        imgPath:Todo},
         {title:"Pokemon",
         description:"This app makes an api call to https://pokeapi.co/, displays a chosen number of pokemon and has a searchfield.",
-        imgPath:"/Pages/Portfolio/Poke5.png"},
+        imgPath:poke5},
         {title:"TicTacToe",
         description:"This app lets you play a game of TicTacToe."
-        ,imgPath:"/Pages/Portfolio/TicTacToe.png"}
+        ,imgPath:TicTacToe},
+        {title:"Slots",
+        description:"This app lets you play multiple games of Slots.",
+        imgPath:slots}
     ]
 
     return(

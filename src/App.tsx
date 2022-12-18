@@ -14,6 +14,7 @@ import { darkTheme, lightTheme } from './Styling/Theme';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme } from '@emotion/react';
+import SlotMachine from './components/labos/Slots/SlotMachine';
 
 
 
@@ -51,6 +52,10 @@ function App() {
             {
               path:"Portfolio/Todo",
               element: <TodoApp/>
+            },
+            {
+              path:"Portfolio/Slots",
+              element: <SlotMachine slots={3}/>
             },
             {
               path:"Contact",
