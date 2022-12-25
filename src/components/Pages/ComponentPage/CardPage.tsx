@@ -7,6 +7,7 @@ import shopping from '../../../Assets/Portfolio/shopping.png';
 import TicTacToe from '../../../Assets/Portfolio/TicTacToe.png';
 import Todo from '../../../Assets/Portfolio/Todo.png';
 import slots from '../../../Assets/Slots/cherry.png';
+import dadJoke from '../../../Assets/Portfolio/dadJoke.png';
 
 const CardPage = ()=>{
 
@@ -31,7 +32,10 @@ const CardPage = ()=>{
         ,imgPath:TicTacToe},
         {title:"Slots",
         description:"This app lets you play multiple games of Slots.",
-        imgPath:slots}
+        imgPath:slots},
+        {title:"DadJoke",
+        description:"This app gives you dad jokes pulled from an API",
+        imgPath:dadJoke}
     ]
 
     return(
