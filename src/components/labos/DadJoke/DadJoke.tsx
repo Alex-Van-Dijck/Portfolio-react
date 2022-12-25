@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Typography,Container,useTheme,Grid } from '@mui/material';
+import { useState} from 'react';
+import { Button, Typography,useTheme,Grid } from '@mui/material';
 
 interface DadJoke {
   joke: string;
@@ -19,6 +19,16 @@ const DadJoke = () => {
       setJoke(data.joke);
     };
 
+    const storeJoke=(joke:string) =>{
+        localStorage.setItem('joke', JSON.stringify(joke));
+    }
+
+    const getJoke:any=()=>{
+      let res = JSON.parse(localStorage.getItem('joke') || 'Not found');
+
+      return res;
+    }
+
   return (
     <Grid component="main" maxWidth="md" 
      container
@@ -30,9 +40,14 @@ const DadJoke = () => {
       <Grid item xs={3}>
         <Grid container direction="column" justifyContent="center" alignItems="center" spacing={1}>
           <Grid item>
-            <Button onClick={() => fetchJoke()} variant="contained">
-            Get a new joke
-            </Button>
+            <Grid container direction="row">
+              <Grid item>
+              <Button onClick={() => fetchJoke()} variant="contained">
+              Get a new joke
+              </Button>
+              
+              </Grid>
+            </Grid>
           </Grid>
           <Grid item>
             {joke && (
