@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import styles from './TicTacToe.module.css';
-import { Alert,AlertTitle } from '@mui/material';
+import { Alert,AlertTitle,useTheme } from '@mui/material';
 
 const TicTacToe = () => {
+  const theme = useTheme();
   const [board, setBoard] = useState(['','','','','','','','','']);
   const [player, setPlayer] = useState('X');
 
@@ -47,6 +48,7 @@ const TicTacToe = () => {
             key={index}
             onClick={() => play(index)}
             className={styles.cell}
+            style={{color:theme.palette.text.primary}}
           >
             {element}
           </div>

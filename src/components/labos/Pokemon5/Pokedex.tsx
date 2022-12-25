@@ -2,6 +2,7 @@ import { List, ListItem, ListItemIcon, TextField } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { ColorRing } from 'react-loader-spinner';
 import CatchingPokemonIcon from '@mui/icons-material/CatchingPokemon';
+import { useTheme } from '@mui/material';
 
 interface PokedexResponse{
     results: Pokemon[];
@@ -36,6 +37,7 @@ const Pokedex = ({limit = 151}:IPokedexProps)=>{
         getPokemon(limit);
     },[limit])
 
+    const theme = useTheme();
     return(
         
         <div style={{marginTop:'1rem'}} >
@@ -53,7 +55,7 @@ const Pokedex = ({limit = 151}:IPokedexProps)=>{
             <List>
             {
                 pokemon.filter((p)=>p.name.toUpperCase().startsWith(filterText.toUpperCase())).map((pokemon)=>{
-                    return <ListItem><ListItemIcon><CatchingPokemonIcon fontSize="small"/></ListItemIcon>{pokemon.name}</ListItem>
+                    return <ListItem style={{color:theme.palette.text.primary}}><ListItemIcon><CatchingPokemonIcon fontSize="small"/></ListItemIcon>{pokemon.name}</ListItem>
                 })
             }
             </List>

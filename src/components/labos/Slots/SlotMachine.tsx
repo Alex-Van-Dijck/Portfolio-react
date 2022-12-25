@@ -1,10 +1,11 @@
 import React,{useState} from "react";
 import styles from './slots.module.css';
 import Slot from "./Slot";
+import { Button,Typography,useTheme,Alert, } from "@mui/material";
 
 const SlotMachine = ({ slots }: { slots: number }) => {
 
-    
+    const theme = useTheme();
 
     const getSlots = (slots: number) => {
         let slotNumbers: number[] = Array.from(Array(slots).keys()).map(() =>
@@ -34,14 +35,14 @@ const SlotMachine = ({ slots }: { slots: number }) => {
   
     return (
       <div className={styles.slotMachineContainer}>
-        {money > 0 && <div>Saldo: €{money}</div>}
-        <div className={styles.slotMachineSubContainer}>
-          <button className={styles.lever} onClick={pullLever} disabled={money > 0 ? false : true}>Pull Lever</button>
+        {money > 0 && <div style={{color:theme.palette.text.primary}}>Saldo: €{money}</div>}
+        <div className={styles.slotMachineSubContainer} style={{borderColor:theme.palette.divider}}>
+          <Button style={{margin:'2rem'}} variant='outlined' onClick={pullLever} disabled={money > 0 ? false : true}>Pull Lever</Button>
           {slotNumbers.map((slot, i) => (
             <Slot value={slot} key={i} />
           ))}
         </div>
-        {money == 0 && <p className={styles.linearWipe}>Je bent bankroet!</p>}
+        {money === 0 && <Alert severity="error">Je bent bankroet!</Alert>}
    
       </div>
     );

@@ -3,7 +3,8 @@ import { TodoItem } from "./TodoList";
 import Checkbox from '@mui/material/Checkbox';
 import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
-import { useTheme } from "@emotion/react";
+import { useTheme } from "@mui/material";
+
 
 interface ITodoItemProps{
     todo:TodoItem,
@@ -13,11 +14,12 @@ interface ITodoItemProps{
 
 const TodoItemView = ({todo,markCompleted,index}:ITodoItemProps) =>{
 
+    const theme = useTheme();
 
     return(
         <div style={{display:'block'}} key={index}>
             <Checkbox checked={todo.completed} onChange={(event) => markCompleted(index, event.target.checked)}/>
-            <span style={{textDecoration: todo.completed ? "line-through" : "none", textAlign:'justify'}} >{todo.name}</span>
+            <span style={{textDecoration: todo.completed ? "line-through" : "none", textAlign:'justify', color:theme.palette.text.primary}} >{todo.name}</span>
         </div>
         
                         
