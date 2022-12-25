@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Typography,Container,useTheme } from '@mui/material';
+import { Button, Typography,Container,useTheme,Grid } from '@mui/material';
 
 interface DadJoke {
   joke: string;
@@ -20,14 +20,28 @@ const DadJoke = () => {
     };
 
   return (
-    <Container component="main" maxWidth="md" style={{margin:'2rem',justifyContent:'center'}} >
-      <Button onClick={() => fetchJoke()} variant="contained">
-        Get a new joke
-      </Button>
-      {joke && (
-        <Typography variant="body1" style={{color:theme.palette.text.primary}}>{joke}</Typography>
-      )}
-    </Container>
+    <Grid component="main" maxWidth="md" 
+     container
+    spacing={0}
+    direction="column"
+    alignItems="center"
+    justifyContent="center"
+    style={{marginTop:'20%', minWidth:'100%' }}>
+      <Grid item xs={3}>
+        <Grid container direction="column" justifyContent="center" alignItems="center" spacing={1}>
+          <Grid item>
+            <Button onClick={() => fetchJoke()} variant="contained">
+            Get a new joke
+            </Button>
+          </Grid>
+          <Grid item>
+            {joke && (
+            <Typography variant="body1" style={{color:theme.palette.text.primary}}>{joke}</Typography>
+            )}
+          </Grid>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 
