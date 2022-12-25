@@ -26,8 +26,9 @@ return(
         component="img"
         height="140"
         image={imgPath}
+        sx={{objectFit: "contain" }}
       />
-      <CardContent>
+      <CardContent >
         <Typography gutterBottom variant="h5" component="div">
           {title}
         </Typography>

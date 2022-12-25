@@ -15,7 +15,6 @@ import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme } from '@emotion/react';
 import SlotMachine from './components/labos/Slots/SlotMachine';
-import LanguageDetector from './components/labos/LanguageDetector/LanguageDetector';
 import DadJoke from './components/labos/DadJoke/DadJoke';
 
 
@@ -67,8 +66,6 @@ function App() {
             element: <Poke5App/>},
             {path:"Portfolio/TicTacToe",
             element:<TicTacToe/>},
-            {path:"Portfolio/LanguageDetector",
-            element:<LanguageDetector/>},
             {path:"Portfolio/DadJoke",
             element:<DadJoke/>}
         ]
