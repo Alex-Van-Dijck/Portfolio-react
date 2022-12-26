@@ -20,7 +20,7 @@ const ColorSelect = () =>{
     return(
         <>
             <Grid container direction='row' spacing={2} alignItems='center' justifyContent='center'>
-                <Grid item>
+                <Grid item margin={2}>
                     <FormControl sx={{ m: 1, width: 300 }}>
                     <Select multiple value={selectedColors} onChange={handleChange}>
                         {colors.map((color) => (
