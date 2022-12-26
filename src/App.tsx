@@ -17,7 +17,7 @@ import Brightness7Icon from '@mui/icons-material/Brightness7';
 import { useTheme } from '@emotion/react';
 import SlotMachine from './components/labos/Slots/SlotMachine';
 import DadJoke from './components/labos/DadJoke/DadJoke';
-
+import TimerApp from './components/labos/Timer/TimerApp';
 
 
 const Root = () => {
@@ -70,7 +70,9 @@ function App() {
             {path:"Portfolio/DadJoke",
             element:<DadJoke/>},
             {path:"Portfolio/ColorSelect",
-            element:<ColorSelect/>}
+            element:<ColorSelect/>},
+            {path:"Portfolio/Timer",
+            element:<TimerApp/>}
         ]
     }
 ]);

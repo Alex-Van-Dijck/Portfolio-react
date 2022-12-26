@@ -9,6 +9,7 @@ import Todo from '../../../Assets/Portfolio/Todo.png';
 import slots from '../../../Assets/Slots/cherry.png';
 import dadJoke from '../../../Assets/Portfolio/dadJoke.png';
 import ColorSelect from '../../../Assets/Portfolio/ColorSelect.png';
+import Timer from '../../../Assets/Portfolio/Timer.png';
 
 const CardPage = ()=>{
 
@@ -35,11 +36,14 @@ const CardPage = ()=>{
         description:"This app lets you play multiple games of Slots.",
         imgPath:slots},
         {title:"DadJoke",
-        description:"This app gives you dad jokes pulled from an API",
+        description:"This app displays and allows the user to refresh or save a dad joke fetched from an API, and displays the last saved favorite joke.",
         imgPath:dadJoke},
         {title:"ColorSelect",
-        description:"This app lets you select multiple colors and display them",
-        imgPath:ColorSelect}
+        description:"This app displays and allows the user to modify a list of selected colors.",
+        imgPath:ColorSelect},
+        {title:'Timer',
+        description:"This app displays and updates elapsed time, current time, and a random number using setInterval and useEffect.",
+        imgPath:Timer}
     ]
 
     return(
