@@ -8,6 +8,7 @@ import TicTacToe from '../../../Assets/Portfolio/TicTacToe.png';
 import Todo from '../../../Assets/Portfolio/Todo.png';
 import slots from '../../../Assets/Slots/cherry.png';
 import dadJoke from '../../../Assets/Portfolio/dadJoke.png';
+import ColorSelect from '../../../Assets/Portfolio/ColorSelect.png';
 
 const CardPage = ()=>{
 
@@ -35,7 +36,10 @@ const CardPage = ()=>{
         imgPath:slots},
         {title:"DadJoke",
         description:"This app gives you dad jokes pulled from an API",
-        imgPath:dadJoke}
+        imgPath:dadJoke},
+        {title:"ColorSelect",
+        description:"This app lets you select multiple colors and display them",
+        imgPath:ColorSelect}
     ]
 
     return(

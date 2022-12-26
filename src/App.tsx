@@ -7,6 +7,7 @@ import ContactPage from './components/Pages/Contact/Contact';
 import ShoppingList from './components/labos/ShoppingList/ShoppingList';
 import TodoApp from './components/labos/Todo/TodoApp';
 import Poke5App from './components/labos/Pokemon5/Poke5App';
+import ColorSelect from './components/labos/ColorSelect/ColorSelect';
 import TicTacToe from './components/labos/TicTacToe/TicTacToe';
 import styles from './App.module.css';
 import { IconButton,  ThemeProvider } from '@mui/material';
@@ -67,7 +68,9 @@ function App() {
             {path:"Portfolio/TicTacToe",
             element:<TicTacToe/>},
             {path:"Portfolio/DadJoke",
-            element:<DadJoke/>}
+            element:<DadJoke/>},
+            {path:"Portfolio/ColorSelect",
+            element:<ColorSelect/>}
         ]
     }
 ]);
