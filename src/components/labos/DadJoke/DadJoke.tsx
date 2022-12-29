@@ -8,7 +8,7 @@ interface DadJoke {
 const DadJoke = () => {
   const theme = useTheme();
   const [joke, setJoke] = useState<string>("");
-  const [favJoke,setFavJoke] = useState<string>('');
+  const [favJoke, setFavJoke] = useState(localStorage.getItem("favoriteJoke") || "");
  
 
     const fetchJoke = async () => {
@@ -18,16 +18,15 @@ const DadJoke = () => {
         }
       });
       const data: DadJoke = await res.json();
-      setJoke(data.joke);
+      if(data.joke){
+        setJoke(data.joke);
+      }
     };
 
     useEffect(()=>{
       fetchJoke();
     },[]);
     
-    useEffect(()=>{
-      setFavJoke(getJoke());
-    },[]);
 
     useEffect(()=>{
       storeJoke(favJoke);
@@ -35,12 +34,10 @@ const DadJoke = () => {
 
     const storeJoke=(joke:string) =>{
         localStorage.setItem('joke', JSON.stringify(joke));
-        console.log('[POST] ' + joke);
     }
 
     const getJoke:any=()=>{
       let res = JSON.parse(localStorage.getItem('joke') ?? '{}');
-      console.log('[GET] ' + res);
       return res;
     }
 
