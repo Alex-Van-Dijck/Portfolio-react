@@ -23,12 +23,8 @@ const Weather = () =>{
         };
 
         let response = await fetch(url, options);
-        console.log(response);
         let WeatherValues:RootObject = await response.json();
-        console.log("results");
-        console.log(WeatherValues.data);
         setWeather(WeatherValues.data);
-        console.log(WeatherValues.data[0].datetime.split(':').pop());
 
     }
 
@@ -88,8 +84,6 @@ if(weather){
                 If this keeps loading, the site has passed its daily API request limit.<br/>
                 Come back tomorrow.
             </Typography>}
-            
-
         </Box>
     )
 }
