@@ -18,6 +18,7 @@ import { useTheme } from '@emotion/react';
 import SlotMachine from './components/labos/Slots/SlotMachine';
 import DadJoke from './components/labos/DadJoke/DadJoke';
 import TimerApp from './components/labos/Timer/TimerApp';
+import Weather from './components/apis/Weather';
 
 
 const Root = () => {
@@ -72,7 +73,10 @@ function App() {
             {path:"Portfolio/ColorSelect",
             element:<ColorSelect/>},
             {path:"Portfolio/Timer",
-            element:<TimerApp/>}
+            element:<TimerApp/>},
+            {path:"Portfolio/Weather",
+            element:<Weather/>},
+            
         ]
     }
 ]);
