@@ -11,6 +11,7 @@ import dadJoke from '../../../Assets/Portfolio/dadJoke.png';
 import ColorSelect from '../../../Assets/Portfolio/ColorSelect.png';
 import Timer from '../../../Assets/Portfolio/Timer.png';
 import weather from '../../../Assets/Portfolio/weather.png';
+import LoveCalculator from "../../../Assets/Portfolio/LoveCalculator.png";
 
 const CardPage = ()=>{
 
@@ -47,7 +48,10 @@ const CardPage = ()=>{
         imgPath:Timer},
         {title:'Weather',
         description:"This app is a weather forecast app that displays a table of weather data by making a GET request to an API.",
-        imgPath:weather}
+        imgPath:weather},
+        {title:'LoveCalculator',
+        description:"This app calculates love compatibility based on two names and displays the result as a percentage and description.",
+        imgPath:LoveCalculator}
     ]
 
     return(

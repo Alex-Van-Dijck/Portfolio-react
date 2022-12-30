@@ -9,7 +9,6 @@ import TodoApp from './components/labos/Todo/TodoApp';
 import Poke5App from './components/labos/Pokemon5/Poke5App';
 import ColorSelect from './components/labos/ColorSelect/ColorSelect';
 import TicTacToe from './components/labos/TicTacToe/TicTacToe';
-import styles from './App.module.css';
 import { IconButton,  ThemeProvider } from '@mui/material';
 import { darkTheme, lightTheme } from './Styling/Theme';
 import Brightness4Icon from '@mui/icons-material/Brightness4';
@@ -19,6 +18,8 @@ import SlotMachine from './components/labos/Slots/SlotMachine';
 import DadJoke from './components/labos/DadJoke/DadJoke';
 import TimerApp from './components/labos/Timer/TimerApp';
 import Weather from './components/apis/Weather';
+import LoveTester from './components/apis/LoveCalculator';
+import LoveCalculator from './components/apis/LoveCalculator';
 
 
 const Root = () => {
@@ -76,6 +77,8 @@ function App() {
             element:<TimerApp/>},
             {path:"Portfolio/Weather",
             element:<Weather/>},
+            {path:"Portfolio/LoveCalculator",
+            element:<LoveCalculator/>},
             
         ]
     }
