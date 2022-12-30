@@ -10,6 +10,7 @@ import slots from '../../../Assets/Slots/cherry.png';
 import dadJoke from '../../../Assets/Portfolio/dadJoke.png';
 import ColorSelect from '../../../Assets/Portfolio/ColorSelect.png';
 import Timer from '../../../Assets/Portfolio/Timer.png';
+import weather from '../../../Assets/Portfolio/weather.png';
 
 const CardPage = ()=>{
 
@@ -43,7 +44,10 @@ const CardPage = ()=>{
         imgPath:ColorSelect},
         {title:'Timer',
         description:"This app displays and updates elapsed time, current time, and a random number using setInterval and useEffect.",
-        imgPath:Timer}
+        imgPath:Timer},
+        {title:'Weather',
+        description:"This app is a weather forecast app that displays a table of weather data by making a GET request to an API.",
+        imgPath:weather}
     ]
 
     return(
