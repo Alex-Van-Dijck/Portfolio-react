@@ -1,4 +1,4 @@
-import react,{useEffect,useState} from 'react';
+import {useEffect,useState} from 'react';
 import { Datum, RootObject } from './Weatherservice';
 import {Table,Paper,TableContainer,TableHead,TableRow,TableCell,TableBody,Box,Typography,useTheme} from '@mui/material';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -34,7 +34,7 @@ const Weather = () =>{
 
     useEffect(()=>{
         getWeather();
-    },[])
+    },)
     
 if(weather){
     return(

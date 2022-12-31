@@ -21,6 +21,7 @@ const LoveCalculator = () =>{
     const getLove = async(name1:string,name2:string) =>{
 
         setLoading(true);
+        console.log('[ENV] ' + apiKey);
         const url = 'https://love-calculator.p.rapidapi.com/getPercentage?sname='+name1+'&fname='+name2;
 
         const options = {

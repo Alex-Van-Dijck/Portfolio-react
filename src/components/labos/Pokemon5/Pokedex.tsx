@@ -27,8 +27,6 @@ const Pokedex = ({limit = 151}:IPokedexProps)=>{
         setLoading(true);
         let response = await fetch("https://pokeapi.co/api/v2/pokemon?limit=" + limit );
         let Pokedex:PokedexResponse = await response.json();
-        console.log("results");
-        console.log(Pokedex.results);
         setPokemon(Pokedex.results);
         setLoading(false);
     }
