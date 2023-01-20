@@ -8,7 +8,7 @@ export const darkTheme:Theme = createTheme({
   },
   palette: {
     primary: {
-      main: indigo[500],
+      main: '#3f51b5',
       light: '#6573c3',
       dark: '#2c387e'
     },
@@ -22,7 +22,7 @@ export const darkTheme:Theme = createTheme({
         paper: '#000000'
     },
     text:{
-      primary:'',
+      primary:'rgba(255, 255, 255, 1)',
       secondary:'rgba(255, 255, 255, 0.7)',
       disabled: 'rgba(255, 255, 255, 0.5)'
     },
