@@ -18,12 +18,11 @@ export const darkTheme:Theme = createTheme({
       dark: '#14a37f'
     },
     background:{
-        default:'#121212',
-        paper: '#121212'
+        default:'#000000',
+        paper: '#000000'
     },
-    divider:'rgba(255, 255, 255, 0.12)',
     text:{
-      primary:'#fff',
+      primary:'',
       secondary:'rgba(255, 255, 255, 0.7)',
       disabled: 'rgba(255, 255, 255, 0.5)'
     },

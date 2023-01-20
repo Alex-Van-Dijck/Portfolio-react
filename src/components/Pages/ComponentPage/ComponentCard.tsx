@@ -21,7 +21,7 @@ const ComponentCard = ({imgPath,title,description}:ICardProps)=> {
 return(
     <div>
     <Card sx={{ maxWidth: 345 }} style={{width:'22rem'}}>
-    <CardActionArea>
+    <CardActionArea onClick={()=>{nav("/Portfolio/" + title)}}>
       <CardMedia
         component="img"
         height="140"
@@ -37,11 +37,6 @@ return(
         </Typography>
       </CardContent>
     </CardActionArea>
-    <CardActions className={styles.Center}>
-      <Button size="small" color="primary" variant="outlined" onClick={()=>{nav("/Portfolio/" + title)}} >
-        Open
-      </Button>
-    </CardActions>
   </Card>
     </div>
 );
