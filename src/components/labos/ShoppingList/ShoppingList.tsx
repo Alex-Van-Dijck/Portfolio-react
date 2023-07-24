@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from "react";
-import styles from "./shoppingList.module.css";
-import {Alert, Button,TextField,Table,TableHead,TableBody,TableCell,TableRow, TableContainer,Paper, Container} from '@mui/material';
+import {Alert, Button,TextField,Table,TableHead,TableCell,TableRow, TableContainer,Paper, Container} from '@mui/material';
 
 interface shoppingListItem{
     name:string,
