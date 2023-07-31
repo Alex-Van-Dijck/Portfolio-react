@@ -43,7 +43,7 @@ function App() {
 				},
 				{
 					path: "Portfolio",
-					element: <CardPage />,
+					element: <CardPage searchBar={true} limitCards={false} />,
 				},
 				{
 					path: "Portfolio/Shoppinglist",

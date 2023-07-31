@@ -14,7 +14,12 @@ import weather from "../../../Assets/Portfolio/weather.png";
 import LoveCalculator from "../../../Assets/Portfolio/LoveCalculator.png";
 import FeedbackPopup from "../../../Assets/Portfolio/FeedbackPopup.png";
 
-const CardPage = () => {
+interface ICardPage {
+	searchBar: boolean;
+	limitCards: boolean;
+}
+
+const CardPage = ({ limitCards, searchBar }: ICardPage) => {
 	const [filterText, setFilterText] = useState<string>("");
 
 	useEffect(() => {
@@ -40,15 +45,21 @@ const CardPage = () => {
 			imgPath: Todo,
 		},
 		{
-			title: "Pokemon",
+			title: "ColorSelect",
 			description:
-				"This app makes an api call to https://pokeapi.co/, displays a chosen number of pokemon and has a searchfield.",
-			imgPath: poke5,
+				"This app displays and allows the user to modify a list of selected colors.",
+			imgPath: ColorSelect,
 		},
 		{
 			title: "TicTacToe",
 			description: "This app lets you play a game of TicTacToe.",
 			imgPath: TicTacToe,
+		},
+		{
+			title: "Pokemon",
+			description:
+				"This app makes an api call to https://pokeapi.co/, displays a chosen number of pokemon and has a searchfield.",
+			imgPath: poke5,
 		},
 		{
 			title: "Slots",
@@ -60,12 +71,6 @@ const CardPage = () => {
 			description:
 				"This app displays and allows the user to refresh or save a dad joke fetched from an API, and displays the last saved favorite joke.",
 			imgPath: dadJoke,
-		},
-		{
-			title: "ColorSelect",
-			description:
-				"This app displays and allows the user to modify a list of selected colors.",
-			imgPath: ColorSelect,
 		},
 		{
 			title: "Timer",
@@ -87,16 +92,20 @@ const CardPage = () => {
 		},
 	];
 
+	limitCards && Cardlist.splice(4, Cardlist.length - 3);
+
 	return (
 		<div className={styles.rootContainer}>
-			<TextField
-				label="Search"
-				variant="outlined"
-				margin="normal"
-				type="search"
-				onChange={(event) => setFilterText(event.target.value)}
-				value={filterText}
-			/>
+			{searchBar && (
+				<TextField
+					label="Search"
+					variant="outlined"
+					margin="normal"
+					type="search"
+					onChange={(event) => setFilterText(event.target.value)}
+					value={filterText}
+				/>
+			)}
 			<div className={styles.container}>
 				{Cardlist.filter((c) =>
 					c.title.toUpperCase().startsWith(filterText.toUpperCase())

@@ -1,14 +1,14 @@
-.container{
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 80px;
-    flex-wrap: wrap;
-    padding-top:1rem;
-    padding-bottom: 1rem;
+.container {
+	display: flex;
+	justify-content: center;
+	flex-direction: row;
+	gap: 80px;
+	flex-wrap: wrap;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 }
-.rootContainer{
-    display:flex;
-    flex-direction: column;
-    margin:1rem;
+.rootContainer {
+	display: flex;
+	flex-direction: column;
+	margin: 1rem;
 }
