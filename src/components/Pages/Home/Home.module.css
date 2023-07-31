@@ -10,4 +10,23 @@
 	min-height: 100vh;
 	box-sizing: border-box;
 	justify-content: center;
+	position: relative;
+}
+html {
+	scroll-behavior: smooth;
+}
+.icon {
+	position: absolute;
+	bottom: 1rem;
+}
+.firsticon {
+	position: absolute;
+	bottom: 5rem;
+}
+.upicon {
+	position: absolute;
+	top: 1rem;
+}
+a {
+	text-decoration: none;
 }

@@ -6,6 +6,8 @@ import ContactPage from "../Contact/Contact";
 import styles from "./Home.module.css";
 import useScrollSnap from "react-use-scroll-snap";
 import About from "../AboutPage/About";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
 const Home = () => {
 	const theme = useTheme();
 
@@ -18,6 +20,7 @@ const Home = () => {
 
 	return (
 		<Box
+			id="Top"
 			style={{
 				position: "relative",
 			}}
@@ -49,8 +52,14 @@ const Home = () => {
 						Full Stack Developer
 					</Typography>
 				</Box>
+				<a href="#Portfolio">
+					<KeyboardArrowDownIcon
+						sx={{ color: "white" }}
+						className={styles.firsticon}
+					/>
+				</a>
 			</Box>
-			<Box className={styles.Section}>
+			<Box className={styles.Section} id="Portfolio">
 				<Typography
 					variant="h3"
 					sx={{
@@ -62,8 +71,12 @@ const Home = () => {
 					Portfolio
 				</Typography>
 				<CardPage searchBar={false} limitCards={true} />
+				<a href="#AboutMe">
+					<KeyboardArrowDownIcon className={styles.icon} />
+				</a>
 			</Box>
 			<Box
+				id="AboutMe"
 				sx={{
 					backgroundColor: theme.palette.secondary.main,
 				}}
@@ -80,8 +93,17 @@ const Home = () => {
 					About me
 				</Typography>
 				<About />
+				<a href="#Contact">
+					<KeyboardArrowDownIcon
+						className={styles.icon}
+						sx={{ color: "white" }}
+					/>
+				</a>
 			</Box>
-			<Box className={styles.Section}>
+			<Box className={styles.Section} id="Contact">
+				<a href="#Top">
+					<KeyboardArrowUpIcon className={styles.upicon} />
+				</a>
 				<ContactPage />
 			</Box>
 		</Box>
