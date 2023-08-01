@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import { Typography, useTheme, Box } from "@mui/material";
-import head from "../../../Assets/Home/beeldinhoud.png";
+
 import CardPage from "../ComponentPage/CardPage";
 import ContactPage from "../Contact/Contact";
 import styles from "./Home.module.css";
@@ -8,6 +8,7 @@ import useScrollSnap from "react-use-scroll-snap";
 import About from "../AboutPage/About";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import Info from "./Info";
 const Home = () => {
 	const theme = useTheme();
 
@@ -32,26 +33,7 @@ const Home = () => {
 				}}
 				className={styles.Section}
 			>
-				<img
-					src={head}
-					style={{ maxWidth: "300px", maxHeight: "300px" }}
-					alt="Profielfoto Alex"
-				/>
-				<Box display={"flex"} flexDirection={"column"} gap={"1rem"}>
-					<Typography
-						sx={{
-							fontWeight: "bold",
-							borderBottom: "3px solid " + theme.palette.secondary.light,
-							typography: { sm: "h2", xs: "h3" },
-						}}
-						color={"white"}
-					>
-						Alex Van Dijck
-					</Typography>
-					<Typography variant="h5" color={"white"}>
-						Full Stack Developer
-					</Typography>
-				</Box>
+				<Info />
 				<a href="#Portfolio">
 					<KeyboardArrowDownIcon
 						sx={{ color: "white" }}
