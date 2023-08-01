@@ -6,7 +6,7 @@
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	height: 100vh;
+	height: 93vh;
 }
 
 .popupContainer {
@@ -21,6 +21,7 @@
 	animation: fadeIn ease 0.3s;
 	animation-iteration-count: 1;
 	animation-fill-mode: forwards;
+	z-index: 1;
 }
 
 @keyframes fadeIn {
@@ -34,8 +35,8 @@
 
 .container {
 	position: relative;
-	width: 920px;
-	height: 444px;
+	max-width: 920px;
+	max-height: 444px;
 	background-color: #1a1832;
 	display: flex;
 	flex-direction: column;
@@ -48,8 +49,8 @@
 
 .numberButton {
 	all: unset;
-	width: 60px;
-	height: 60px;
+	width: 4rem;
+	height: 4rem;
 	background-color: #1a2036;
 	border: 1px solid #2e3650;
 	border-radius: 10px;
@@ -64,8 +65,8 @@
 
 .numberButtonClicked {
 	all: unset;
-	width: 60px;
-	height: 60px;
+	width: 4rem;
+	height: 4rem;
 	background-color: #1a2036;
 	border: 2px solid #b1b9d8;
 	border-radius: 10px;
@@ -82,6 +83,8 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 .numberRowContainer {
@@ -146,4 +149,20 @@
 .footer {
 	position: absolute;
 	bottom: 1rem;
+}
+
+@media only screen and (max-width: 900px) {
+	.container {
+		max-width: 95vw;
+		max-height: 55vh;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	.topText {
+		font-size: 20px;
+	}
+	.container {
+		max-height: 80vh;
+	}
 }

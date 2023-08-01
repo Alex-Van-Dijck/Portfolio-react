@@ -2,10 +2,8 @@ import { Box, IconButton, Typography } from "@mui/material";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { useNavigate } from "react-router-dom";
 
 const About = () => {
-	const nav = useNavigate();
 	return (
 		<Box display={"flex"} flexDirection={"column"} gap={"1rem"}>
 			<Typography variant="h6" color={"white"}>
