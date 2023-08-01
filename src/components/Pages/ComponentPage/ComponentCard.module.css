@@ -1,3 +1,6 @@
-.Center{
-    justify-content: center;
+.zoom:hover {
+	transform: scale(0.95);
+}
+.zoom {
+	transition: transform 330ms ease-in-out;
 }

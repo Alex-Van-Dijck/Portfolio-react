@@ -5,6 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import styles from "./ComponentCard.module.css";
 
 export interface ICardProps {
 	imgPath: string;
@@ -18,7 +19,11 @@ const ComponentCard = ({ style, imgPath, title, description }: ICardProps) => {
 
 	return (
 		<div style={style}>
-			<Card sx={{ maxWidth: 345 }} style={{ width: "22rem" }}>
+			<Card
+				sx={{ maxWidth: 345 }}
+				style={{ width: "22rem" }}
+				className={styles.zoom}
+			>
 				<CardActionArea
 					onClick={() => {
 						nav("/Portfolio/" + title);
